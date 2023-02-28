@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function ImageGallery() {
+function Image() {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
@@ -20,4 +20,4 @@ function ImageGallery() {
     );
 }
 
-export default ImageGallery;
+export default Image;
