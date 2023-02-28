@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const multer = require('multer');
+const userRoutes = require('./Routes/userRoutes')
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 
@@ -35,6 +36,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Set up routes
+app.use('/', userRoutes)
 app.post('/upload', upload.single('file'), (req, res) => {
     const file = req.file;
     const newImage = { name: file.filename };
